@@ -11,6 +11,10 @@ let dinoFrame
 let currentFrameTime
 let yVel
 
+export function setDinoLose() {
+    dinoElement.src = "imgs/dino-lose.png"
+}
+
 export function setupDino() {
     isJumping = false
     dinoFrame = 0
@@ -24,6 +28,10 @@ export function setupDino() {
 export function updateDino(delta, speedScale) {
     handleRun(delta, speedScale)
     handleJump(delta)
+}
+
+export function getDinoRects() {
+    return dinoElement.getBoundingClientRect()
 }
 
 function handleRun(delta, speedsScale) {
